@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+<head th:replace="main2 ::html_headtag">
+	<meta charset="ISO-8859-1">
+	<title>Food Along!</title>
+</head>
+<body>
+
+<div th:replace="main2 ::html_header"></div>
+
+	<div class="banner">
+		<div class="fknboxcenter mx-auto">
+			<h1 class="text-center mb-5 mt-3"> Your Meal List</h1>
+			<div class="container">
+				<h2 class="fs-4">Add meals to you meal list:</h2>
+				<!--FORM för att lägga till ett meal i en userMealList-->
+				<div class="mx-auto">
+					<form action="/saveMeal" method="POST">
+						<input type="hidden" name="user" th:value="${user.id}">
+						<div class="input-group mb-3">
+							<input type="text" name="mealName" placeholder="Please add your new meal here"/>
+							<button type="submit" class="btn btn-gul m-0">Add Meal</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+				<!--TABLE visar alla meals som finns för user-->
+			<div class="m-5">
+				<table class="registerform">
+					<thead>
+						<tr>
+							<th class="fs-3">This Meal List Contains:</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody class="text-start">
+						<tr th:each="meal : ${user.userMealList}" >
+							<td th:text="${meal.mealName}" class="fs-4"></td>
+							<td><a th:href="'/deleteMeal/' + ${meal.id}" class="btn btn-rosa px-4">Delete</a></td>
+							<td><a th:href="'/editMeal/' + ${meal.id}" class="btn btn-green px-4">Edit</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<!--Tillbaka till profilsidan -->
+			<a class="btn px-5 p-3 m-4 fs-3" href="/user/profile/">Done! Back to Profiles</a>
+
+		</div>
+	</div>
+<div th:replace="main2 ::html_footer"></div>
+</body>
+</html>
+

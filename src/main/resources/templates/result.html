@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+<head th:replace="main2 ::html_headtag">
+	<meta charset="ISO-8859-1">
+	<title>Edit Profile</title>
+</head>
+
+<body>
+
+	<div th:replace="main2 ::html_header"></div>
+	<div class="banner">
+		<div class="fknboxcenter mx-auto">
+			<h2 class="text-center">Today <span class="text-capitalize" th:text="${session.profile.name}"></span> is craving for...</h2>
+
+			<!-- render the result of the profiles yesMealList -->
+			<table>
+				<tr th:each="meal : ${yesMealList}">
+					<td class="text-capitalize text-center btn" th:text="${meal.mealName}"></td>
+				</tr>
+			</table>
+
+			<p><a class="btn btn-rosa fs-3" th:href="'/user/profile/' + ${session.profile.user.id}">Change profile</a></p>
+
+			<!-- If profileList.size is greater than 0 then the matchingMeals link will show -->
+			<p th:if="${profileList.size() > 1}"><a class="btn btn-gul fs-3" th:href="@{/matchingMeals}">See matching meals</a></p>
+		</div>
+	</div>
+	<div th:replace="main2 ::html_footer"></div>
+</body>
+</html>

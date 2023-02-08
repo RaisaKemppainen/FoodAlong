@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+<head th:replace="main2 ::html_headtag">
+    <meta charset="ISO-8859-1">
+    <title>Food Along!</title>
+</head>
+<body>
+
+<div th:replace="main2 ::html_header"></div>
+
+<div class="banner">
+    <div class="fknboxcenter mx-auto">
+        <div class="container">
+                <h1 class="text-center">Hi <span class="text-capitalize" th:text="${user.firstName}"></span>!</h1><br><p>Enter your family members below!</p>
+                <form action="/user/saveProfile" method="post">
+                    <input type="hidden" name="user" th:value="${user.id}">
+                    <div class="input-group mb-3">
+                        <input placeholder="Add profile name" name="name" type="text"> <br>
+                        <button type="submit" class="btn btn-gul p-3 px-4 m-0">Add profile</button>
+                    </div>
+                </form>
+        </div>
+        <div class="mt-4">
+            <table>
+                <tr th:each="profile : ${user.profileList}">
+                    <a class="btn btn-rosa fs-3" th:href="'/main/' + ${profile.id}" th:text="${profile.name}"></a>
+
+                </tr>
+
+            </table>
+
+            <div class="mt-4">
+                <a class="btn px-3" th:href="@{/mealList(id=${user.id})}">Go to Meal List</a>
+                <a class="btn px-3" th:href="@{/user/editProfile(id=${user.id})}">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="main2 ::html_footer"></div>
+
+</body>
+</html>

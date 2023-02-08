@@ -1,0 +1,28 @@
+!DOCTYPE html>
+<html xmlns:th="http:www.thymeleaf.org">
+<head th:replace="main2 ::html_headtag">
+	<meta charset="ISO-8859-1">
+	<title>Edit Profile</title>
+</head>
+
+<body>
+
+	<div th:replace="main2 ::html_header"></div>
+
+	<div class="banner">
+		<div class="fknboxcenter mx-auto">
+
+			<h1 class="text-center">It's a match!</h1><br>
+
+			<spann class="btn px-3 text-left text-capitalize fs-4" th:each="meal : ${mealListById}">
+				<p th:text="${meal.mealName}"></p>
+			</spann>
+
+			<a class="btn btn-rosa fs-3 px-3" href="/reset/">Reset Session</a>
+		</div>
+	</div>
+
+	<div th:replace="main2 ::html_footer"></div>
+
+</body>
+</html>
