@@ -1,7 +1,7 @@
-# FoodAlong
+# Get Along with FoodAlong
 Java application to match meals between profiles. To help planing meals with family or friends.
 
-##Techniques
+## Techniques
 - JAVA Spring Boot MVC
 - Thymleaf
 - Spring security
