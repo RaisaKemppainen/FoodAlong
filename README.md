@@ -1,6 +1,15 @@
 # FoodAlong
 Java application to match meals between profiles. To help planing meals with family or friends.
 
+##Techniques
+- JAVA Spring Boot MVC
+- Thymleaf
+- Spring security
+- Html
+- Custom Css & Bootstrap 5
+- MySQL database
+- JPA
+
 
 ## Login with Spring Security and Validation
 ![Skärmavbild 2023-02-08 kl  10 11 45](https://user-images.githubusercontent.com/56631651/217489856-b718026d-8020-481b-93e1-cba3531e6142.png)
