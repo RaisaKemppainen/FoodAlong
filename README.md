@@ -59,3 +59,5 @@ The design is Neubrutalism, fun and with no rules design. Perfect for kids and f
 
 Everyone in the team has worked with the code in mob programming sessions.
 
+## Visit the GitHub Repository
+https://github.com/RaisaKemppainen/FoodAlong
